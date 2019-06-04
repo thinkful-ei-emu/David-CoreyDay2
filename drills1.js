@@ -38,3 +38,27 @@ function average(numbers){
 }
 //
 console.log(average(testArray));
+
+// 3/'fizz'
+// 5/'buzz'
+
+function fizzBuzz(countTo){
+  let arry = [];
+  
+  for(let i=0; i < countTo; i++){
+    arry[i] = i+1;
+  }
+  arry.forEach(function(element){
+    if(element % 3 === 0 && element % 5 === 0){
+      element = 'fizzbuzz';
+    }
+    if(element % 3 === 0){
+      element = 'fizz';
+    }
+    if(element % 5 === 0){
+      element = 'buzz';
+    }
+  });
+  return arry;
+}
+log(fizzBuzz(15));
