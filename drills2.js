@@ -50,3 +50,26 @@ console.log(filteredNames); // => ['Rich', 'Ray']
 console.log(filter(['Rich', 'Joe', 'Bhaumik', 'Ray'],(name)=>{
   return name.length >= 4;
 }));
+
+/////////////////////
+
+function hazardWarningCreator(typeOfWarning){
+  let warningCounter = 0;
+
+  return (location) => {
+    warningCounter++;
+    console.log(`DANGER! There is a ${typeOfWarning} hazard at ${location}!`);
+    console.log(`The ${typeOfWarning} hazard alert has triggered ${warningCounter} time(s) today!`);
+  };
+}
+
+const snowWarning = hazardWarningCreator('Snowfall to be more than 1 foot');
+const rockWarning = hazardWarningCreator('Rocks on the road');
+const heatWarning = hazardWarningCreator('Heat index over 9000');
+
+snowWarning('Main St and Pacfic Ave');
+snowWarning('South end Main street');
+snowWarning('Sleater Kinny and 4th Ave');
+
+///////////////////
+
