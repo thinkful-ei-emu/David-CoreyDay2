@@ -1,6 +1,7 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-console */
 'use strict';
-
+let log = (msg)=>console.log(msg);
 function repeat(fn,n){
   for(let i=0; i < n; i++){
     fn();
@@ -23,7 +24,7 @@ repeat(goodbye, 5);
 function filter(arry, fn) {
   let newarray= [];
   for(let x =0;x<arry.length;x++){
-    console.log(fn(arry[x]));
+    //console.log(fn(arry[x]));
     if(fn(arry[x])){
       newarray.push(arry[x]);
     }
@@ -72,4 +73,20 @@ snowWarning('South end Main street');
 snowWarning('Sleater Kinny and 4th Ave');
 
 ///////////////////
+
+let movements =[[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]];
+
+
+log(movements.filter((element)=>{
+  return element[0]>=0 && element[1]>=0;
+}));
+let result =movements.map((element)=>{
+
+  return element[0]+element[1];
+});
+log(result);
+result.forEach((element, index)=>{
+  log(`Movement # ${index}: ${Math.abs(element)} steps`);
+});
+
 
