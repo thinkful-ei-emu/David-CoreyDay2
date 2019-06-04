@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 'use strict';
-
+let log = (msg)=> console.log(msg);
+var testArray = [1,2,3,23,4,5,6];
 function max(numbers){
   let big;
   let x = 0;
@@ -28,3 +29,12 @@ function min(numbers){
   return small;
 }
 console.log(min([1,2,3,23,4,5]));
+
+function average(numbers){
+  let total=0;
+  numbers.forEach((element) =>  total += element);
+  return total/numbers.length;
+
+}
+//
+console.log(average(testArray));
