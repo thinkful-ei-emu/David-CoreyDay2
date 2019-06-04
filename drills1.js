@@ -50,15 +50,14 @@ function fizzBuzz(countTo){
   }
   arry.forEach(function(element){
     if(element % 3 === 0 && element % 5 === 0){
-      arry[element] = 'fizzbuzz';
+      arry[element-1] = 'fizzbuzz';
+    }else if(element % 3 === 0){
+      arry[element-1]= 'fizz';
     }
-    if(element % 3 === 0){
-      arry[element]= 'fizz';
-    }
-    if(element % 5 === 0){
-      arry[element] = 'buzz';
+    else if(element % 5 === 0){
+      arry[element-1] = 'buzz';
     }
   });
-  return arry;
+  return arry.toString();
 }
 log(fizzBuzz(15));
