@@ -89,4 +89,20 @@ result.forEach((element, index)=>{
   log(`Movement # ${index}: ${Math.abs(element)} steps`);
 });
 
+////////////////////
 
+let input = 'noggin oreo the moon time tele steed his tent apollo her lives though shoo tofu budapest';
+let acc = '';
+
+//if element is = 3 char.length add a space to arr
+//else capitalize the LAST char arr.length(-1) add to arr
+
+let arr = input.split(' ').reduce((acc,element)=>{
+  if(element.length === 3){
+    return acc += ' ';
+  } else {
+    return acc += element[element.length-1].toUpperCase();
+  }
+});
+
+console.log(acc);
